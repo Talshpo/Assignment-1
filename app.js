@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const  dotenv = require("dotenv").config();
 
-app.get('/', (req, res)=>{
-    res.send('Helow World')
-});
+const port = process.env.PORT;
 
-app.listen(port, () =>{
-    console.log('example app listening at http://localhost:${port}!')
+const postsRoutes = require("./routes/Posts_routes");
+app.use("/posts", postsRoutes);
+
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
 });
