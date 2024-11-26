@@ -1,11 +1,23 @@
 const GetAllPost = (req,res)=>{
-    console.log("posts get all service" );
-    res.send("post get all service");
+    res.send("get all posts");
+};
+
+const getPostById = (req,res)=>{
+    res.send("get a post by id");
 };
 
 const CreatePost = (req,res)=>{
-    console.log("posts create service" );
-    res.send("post create service");
+    res.send("create a post");
 };
 
-module.exports = {GetAllPost, CreatePost};
+const deletePost = (req,res)=>{
+    res.send("delete a post");
+};
+
+module.exports = {
+    GetAllPost,
+    CreatePost,
+    deletePost,
+    getPostById, 
+
+};
